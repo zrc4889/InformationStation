@@ -1,4 +1,4 @@
-{
+{ 
   "name": "webpage-screenshot-action",
   "version": "1.0.0",
   "description": "Automatically capture webpage screenshots and send via email",
