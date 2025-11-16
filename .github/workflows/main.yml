@@ -35,21 +35,21 @@ jobs:
 
     - name: Take webpage screenshot
       env:
-        WEBPAGE_URL: ${{ inputs.url || 'https://example.com' }}
+        WEBPAGE_URL: ${{ inputs.url || 'https://www.msn.cn' }}
       run: |
         npm run screenshot
 
     - name: Send email with screenshot
       env:
-        SMTP_HOST: ${{ secrets.SMTP_HOST }}
-        SMTP_PORT: ${{ secrets.SMTP_PORT }}
-        SMTP_USER: ${{ secrets.SMTP_USER }}
-        SMTP_PASS: ${{ secrets.SMTP_PASS }}
-        SMTP_SECURE: ${{ secrets.SMTP_SECURE }}
-        FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
-        TO_EMAIL: ${{ secrets.TO_EMAIL }}
-        WEBPAGE_URL: ${{ inputs.url || 'https://example.com' }}
-        EMAIL_SUBJECT: '网页截图报告 - ${{ inputs.url || 'https://example.com' }}'
+        SMTP_HOST: smtp.163.com
+        SMTP_PORT: 465
+        SMTP_SECURE: true
+        SMTP_USER: zrc_4889@163.com
+        SMTP_PASS: ZASRS37tuwxerHBZ  # 授权码
+        FROM_EMAIL: 'zrc_4889@163.com'
+        TO_EMAIL: 'zrc4889@163.com'
+        WEBPAGE_URL: ${{ inputs.url }}
+        EMAIL_SUBJECT: '网页截图报告'
       run: |
         npm run send-email
 
