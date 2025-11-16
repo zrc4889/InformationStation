@@ -42,10 +42,10 @@ jobs:
     - name: Send email with screenshot
       env:
         SMTP_HOST: smtp.163.com
-        SMTP_PORT: 587
+        SMTP_PORT: 465
+        SMTP_SECURE: true
         SMTP_USER: zrc_4889@163.com
-        SMTP_PASS: ${{ secrets.SMTP_PASS }}
-        SMTP_SECURE: false
+        SMTP_PASS: ZASRS37tuwxerHBZ  # 授权码
         FROM_EMAIL: 'zrc_4889@163.com'
         TO_EMAIL: 'zrc4889@163.com'
         WEBPAGE_URL: ${{ inputs.url }}
